@@ -14,9 +14,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
-import Login from './LoginButton';
+import Login from './Login/LoginButton';
 import { useSelector } from 'react-redux';
-import Profile from './ProfileButton';
+import Profile from './Profile/ProfileButton';
+import Cart from './Cart';
 
 function Header(props) {
   const user = useSelector((state) => state.user);
@@ -44,13 +45,7 @@ function Header(props) {
             <Container fluid className='d-flex mx-4'>
               {user.auth ? <Profile /> : <Login />}
 
-              <Nav.Link className='mx-2'>
-                <FontAwesomeIcon
-                  icon={faBasketShopping}
-                  size='lg'
-                  className='px-1'
-                />
-              </Nav.Link>
+              <Cart />
             </Container>
           </Nav>
         </Navbar.Collapse>

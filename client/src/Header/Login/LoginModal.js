@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Container, Col, Row } from 'react-bootstrap';
 import LoginComponent from './LogInComponent';
-import SignUp from './SignUp';
+import SignUp from '../SignUp';
 import Link from '@mui/material/Link';
 import { useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';

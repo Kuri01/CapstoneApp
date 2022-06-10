@@ -8,12 +8,12 @@ import {
   CloseButton,
 } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import Man from '../Images/man.png';
-import Woman from '../Images/woman.png';
+import Man from '../../Images/man.png';
+import Woman from '../../Images/woman.png';
 import ProfileTabs from './ProfileTabs';
-import Stack from './../AboutUs/AboutUsStack/Stack';
+import Stack from '../../AboutUs/AboutUsStack/Stack';
 import axios from 'axios';
-import { API_URL } from '../API_FROZEN_OBJ';
+import { API_URL } from '../../API_FROZEN_OBJ';
 function ProfileModal(props) {
   const user = useSelector((state) => state.user.userDetails);
 

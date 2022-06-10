@@ -1,12 +1,15 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Modal, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
 import styles from './styles.module.scss';
 import Bus from './Bus';
 import DepartureCard from '../DepartureCard/DepartureCard';
+import SeatsModal from '../SeatsModal/SeatsModal';
 
-import { useSelector } from 'react-redux';
-const SeatsModal = (props) => {
+const DeparturesModal = (props) => {
   const departures = useSelector((state) => state.departures.data);
   const loading = useSelector((state) => state.departures.loading);
+  const [seatsModalShow, setSeatsModalShow] = useState(false);
   return (
     <Modal
       {...props}
@@ -23,16 +26,22 @@ const SeatsModal = (props) => {
         className={styles.modalBody}
         align='center'
         style={{
-          minHeight: '600px',
+          minHeight: '400px',
           justifyContent: 'center',
           textAlign: 'center',
           alignItems: 'center',
         }}
       >
+        <SeatsModal
+          show={seatsModalShow}
+          onHide={() => setSeatsModalShow(false)}
+        />
         {loading === 'PENDING' ? (
-          <Spinner animation='border' role='status'>
-            <span className='visually-hidden'>Loading...</span>
-          </Spinner>
+          <div className={styles.itemsContainer}>
+            <Spinner animation='border' role='status'>
+              <span className='visually-hidden'>Loading...</span>
+            </Spinner>
+          </div>
         ) : (
           ''
         )}
@@ -42,14 +51,24 @@ const SeatsModal = (props) => {
         ) : (
           <div className={styles.departureCardsContainer}>
             {departures.map((element) => (
-              <DepartureCard key={element.id} data={element} />
+              <DepartureCard
+                key={element.id}
+                data={element}
+                showSeats={setSeatsModalShow}
+              />
             ))}
           </div>
         )}
-        {loading === 'REJECTED' ? <h1>Something went wrong...</h1> : ''}
+        {loading === 'REJECTED' ? (
+          <div className={styles.itemsContainer}>
+            <h1>Something went wrong...</h1>
+          </div>
+        ) : (
+          ''
+        )}
       </Modal.Body>
     </Modal>
   );
 };
 
-export default SeatsModal;
+export default DeparturesModal;

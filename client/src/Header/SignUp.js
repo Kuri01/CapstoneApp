@@ -10,7 +10,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Copyright from './Copyright';
+import Copyright from './Login/Copyright';
 
 const theme = createTheme();
 
@@ -22,7 +22,6 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('password'),
     });
-    
   };
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.scss';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { selectDeparture } from './../../features/selectedDepartureSlice';
 
@@ -13,8 +13,8 @@ function DepartureCard(props) {
     props.data.description;
 
   const handleSelect = () => {
+    props.showSeats(true);
     dispatch(selectDeparture(props.data));
-    console.log(props.data);
   };
 
   return (
@@ -22,9 +22,15 @@ function DepartureCard(props) {
       <div className='card' style={{ width: '18em' }}>
         <div>
           <div className={styles.busIcon}>
-            <FontAwesomeIcon icon={faBus} size='xl' />
+            <FontAwesomeIcon icon={faBus} size='4x' />
           </div>
-          <div className={styles.descriptionContainer}>
+          <div className={(styles.descriptionContainer, 'py-3')}>
+            <Row>
+              <Col>
+                <h6>Date </h6>
+              </Col>
+              <Col>{date}</Col>
+            </Row>
             <Row>
               <Col>
                 <h6>From: </h6>
@@ -49,15 +55,12 @@ function DepartureCard(props) {
               </Col>
               <Col>{arrivalTime}</Col>
             </Row>
-
-            <Row>
-              <Col>
-                <h6>Free seats: </h6>
-              </Col>
-              <Col>15</Col>
-            </Row>
-            <Button onClick={() => handleSelect()}>Pick this bus</Button>
           </div>
+          <Container fluid align='center' className='py-3'>
+            <Button variant='secondary' onClick={() => handleSelect()}>
+              Pick this bus
+            </Button>
+          </Container>
         </div>
       </div>
     </div>

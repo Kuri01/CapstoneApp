@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Container, Row, Col } from 'react-bootstrap';
-import SeatsModal from '../DeparturesModal/DeparturesModal';
+import DeparturesModal from '../DeparturesModal/DeparturesModal';
 import styles from './styles.module.scss';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -116,7 +116,7 @@ function SearchCity(props) {
           </span>
         </div>
 
-        <SeatsModal show={modalShow} onHide={() => setModalShow(false)} />
+        <DeparturesModal show={modalShow} onHide={() => setModalShow(false)} />
       </Container>
     </Container>
   );

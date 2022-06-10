@@ -2,7 +2,7 @@ import { Tab, Tabs, Container, Stack } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import DepartureCard from '../smallComponents/DepartureCard/DepartureCard';
-import TicketCard from '../smallComponents/TicketCard/TicketCard';
+import TicketCard from '../../smallComponents/TicketCard/TicketCard';
 
 function ProfileTabs() {
   const [key, setKey] = useState('home');

@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Alert } from 'react-bootstrap';
 import Copyright from './Copyright';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUserLogin } from './../features/userSlice';
+import { fetchUserLogin } from '../../features/userSlice';
 
 const theme = createTheme();
 
@@ -60,7 +60,6 @@ export default function LoginComponent(props) {
               sx={{ mt: 1 }}
             >
               <TextField
-                component='form'
                 margin='normal'
                 required
                 fullWidth
@@ -73,7 +72,6 @@ export default function LoginComponent(props) {
                 onChange={(e) => setUsername(e.target.value)}
               />
               <TextField
-                component='form'
                 margin='normal'
                 required
                 fullWidth
@@ -87,7 +85,6 @@ export default function LoginComponent(props) {
               />
               <Button
                 type='submit'
-                component='form'
                 fullWidth
                 variant='contained'
                 sx={{ mt: 3, mb: 2 }}
