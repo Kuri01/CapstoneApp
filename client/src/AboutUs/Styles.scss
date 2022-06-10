@@ -1,0 +1,28 @@
+.something {
+  background-color: #f2f2f2;
+  min-height: 800px;
+}
+
+.title {
+  padding: 3rem;
+}
+
+.stackContainer {
+  width: 250px;
+  height: 250px;
+  margin: 15px;
+  transform-style: flat;
+}
+
+.stackContainer > div {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+  cursor: pointer;
+}

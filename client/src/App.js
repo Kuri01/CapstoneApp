@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './Header/Header';
+import MainContainer from './_MainContainer/MainContainer';
+import { Auth0Provider } from '@auth0/auth0-react';
+import AboutUs from './AboutUs/AboutUs';
+import Contact from './Contact/Contact';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0Provider
+      domain='YOUR_DOMAIN'
+      clientId='YOUR_CLIENT_ID'
+      redirectUri={window.location.origin}
+    >
+      <div>
+        <Header />
+        <MainContainer />
+        <AboutUs />
+        <Contact />
+      </div>
+    </Auth0Provider>
   );
 }
 
