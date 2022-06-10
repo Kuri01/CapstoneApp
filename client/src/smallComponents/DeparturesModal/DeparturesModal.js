@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Modal, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
 import styles from './styles.module.scss';
-import Bus from './Bus';
+import Bus from '../SeatsModal/Bus';
 import DepartureCard from '../DepartureCard/DepartureCard';
 import SeatsModal from '../SeatsModal/SeatsModal';
 
@@ -10,6 +10,7 @@ const DeparturesModal = (props) => {
   const departures = useSelector((state) => state.departures.data);
   const loading = useSelector((state) => state.departures.loading);
   const [seatsModalShow, setSeatsModalShow] = useState(false);
+
   return (
     <Modal
       {...props}

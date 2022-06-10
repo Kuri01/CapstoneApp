@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Offcanvas, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
+import CartCard from './CartCard';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Cart(props) {
-  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
 
+  const cart = useSelector((state) => state.cart.data);
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(false);
 
@@ -24,8 +28,9 @@ function Cart(props) {
           <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          {cart.map((element) => (
+            <CartCard element={element} />
+          ))}
         </Offcanvas.Body>
       </Offcanvas>
     </div>

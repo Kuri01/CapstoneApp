@@ -17,7 +17,7 @@ import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import Login from './Login/LoginButton';
 import { useSelector } from 'react-redux';
 import Profile from './Profile/ProfileButton';
-import Cart from './Cart';
+import Cart from './Cart/Cart';
 
 function Header(props) {
   const user = useSelector((state) => state.user);
