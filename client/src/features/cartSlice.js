@@ -15,14 +15,17 @@ export const cartSlice = createSlice({
         details: action.payload.details,
       };
       state.data = [...state.data, newObj];
+      console.log(state);
     },
     removeFromCart: (state, action) => {
-      let newData = state.data;
-      newData.filter((obj) => obj.id !== action.payload.id);
+      const newData = state.data.filter((obj) => obj.cartId !== action.payload);
       state.data = newData;
+    },
+    clearCart: (state) => {
+      state.data = [];
     },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

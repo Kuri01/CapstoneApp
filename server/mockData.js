@@ -2,11 +2,12 @@ const departures = [
   {
     id: 1,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Wroclaw',
       arrivalCity: 'Warszawa',
       departureTime: '14:30',
       arrivalTime: '17:20',
+      price: 15.9,
       seats: [
         {
           name: 'a',
@@ -114,11 +115,12 @@ const departures = [
   {
     id: 2,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Torun',
       arrivalCity: 'Gdansk',
       departureTime: '14:30',
       arrivalTime: '17:20',
+      price: 20,
       seats: [
         {
           name: 'a',
@@ -226,11 +228,12 @@ const departures = [
   {
     id: 3,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Wroclaw',
       arrivalCity: 'Warszawa',
-      departureTime: '14:30',
-      arrivalTime: '17:20',
+      departureTime: '16:30',
+      arrivalTime: '18:20',
+      price: 19,
       seats: [
         {
           name: 'a',
@@ -338,11 +341,12 @@ const departures = [
   {
     id: 4,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Wroclaw',
       arrivalCity: 'Warszawa',
-      departureTime: '14:30',
+      departureTime: '10:30',
       arrivalTime: '17:20',
+      price: 16.9,
       seats: [
         {
           name: 'a',
@@ -450,11 +454,12 @@ const departures = [
   {
     id: 5,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Wroclaw',
       arrivalCity: 'Warszawa',
-      departureTime: '14:30',
-      arrivalTime: '17:20',
+      departureTime: '20:30',
+      arrivalTime: '23:20',
+      price: 20.3,
       seats: [
         {
           name: 'a',
@@ -562,11 +567,12 @@ const departures = [
   {
     id: 6,
     description: {
-      date: '2022/6/7',
+      date: '2022/6/12',
       departureCity: 'Wroclaw',
       arrivalCity: 'Warszawa',
       departureTime: '14:30',
       arrivalTime: '17:20',
+      price: 10.3,
       seats: [
         {
           name: 'a',
@@ -679,6 +685,7 @@ const departures = [
       arrivalCity: 'Warszawa',
       departureTime: '14:30',
       arrivalTime: '17:20',
+      price: 17.3,
       seats: [
         {
           name: 'a',

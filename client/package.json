@@ -26,6 +26,8 @@
     "react-bootstrap": "^2.4.0",
     "react-chat-widget": "^3.1.4",
     "react-dom": "^18.1.0",
+    "react-pay-icons": "^2.0.1",
+    "react-payment": "^0.1.8",
     "react-qr-code": "^2.0.7",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
@@ -34,6 +36,7 @@
     "react-uuid": "^1.0.2",
     "sass": "^1.52.2",
     "styled-components": "^5.3.5",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

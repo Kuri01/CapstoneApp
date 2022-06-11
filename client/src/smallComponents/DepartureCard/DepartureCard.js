@@ -9,8 +9,14 @@ import { selectDeparture } from './../../features/selectedDepartureSlice';
 function DepartureCard(props) {
   const dispatch = useDispatch();
 
-  const { date, departureCity, arrivalCity, departureTime, arrivalTime } =
-    props.data.description;
+  const {
+    price,
+    date,
+    departureCity,
+    arrivalCity,
+    departureTime,
+    arrivalTime,
+  } = props.data.description;
 
   const handleSelect = () => {
     props.showSeats(true);
@@ -54,6 +60,12 @@ function DepartureCard(props) {
                 <h6>Arrival: </h6>
               </Col>
               <Col>{arrivalTime}</Col>
+            </Row>{' '}
+            <Row>
+              <Col>
+                <h6>Price: </h6>
+              </Col>
+              <Col>${price}</Col>
             </Row>
           </div>
           <Container fluid align='center' className='py-3'>

@@ -2,8 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Bus from './Bus';
 import { useState } from 'react';
-import { API_URL } from './../../API_FROZEN_OBJ';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from './../../features/cartSlice';
 import { Spinner } from 'react-bootstrap';
@@ -16,25 +14,34 @@ const SeatsModal = (props) => {
   const [picked, setPicked] = useState(null);
 
   const handlePickSeat = (seat, element) => {
-    console.log(element);
     if (picked === null) {
       setPicked(seat);
-      console.log(picked);
     } else {
       setPicked(null);
     }
-
-    console.log(picked);
   };
 
   const handleAddToCart = () => {
-    const { date, departureCity, arrivalCity, departureTime, arrivalTime } =
-      selectedDeparture.description;
+    const {
+      price,
+      date,
+      departureCity,
+      arrivalCity,
+      departureTime,
+      arrivalTime,
+    } = selectedDeparture.description;
     const newItem = {
       id: selectedDeparture.id,
       details: {
         seat: picked,
-        info: { date, departureCity, arrivalCity, departureTime, arrivalTime },
+        info: {
+          price,
+          date,
+          departureCity,
+          arrivalCity,
+          departureTime,
+          arrivalTime,
+        },
       },
     };
     dispatch(addToCart(newItem));
